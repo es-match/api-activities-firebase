@@ -22,6 +22,8 @@ router.get("/activities/:id", (request, response) => {
         "" : ac.data().sportName,
         createDate: ac.data().createDate == null ?
          [""] : ac.data().createDate.toDate(),
+        imageUrl: ac.data().imageUrl == null ?
+         "" : ac.data().imageUrl,
       })
           .catch((error) => response.status(400)
               .send(`Cannot get event: ${error}`)));
@@ -41,6 +43,8 @@ router.get("/activities", (request, response) => {
             "" : ac.data().sportName,
             createDate: ac.data().createDate == null ?
              [""] : ac.data().createDate.toDate(),
+            imageUrl: ac.data().imageUrl == null ?
+            "" : ac.data().imageUrl,
           });
         });
 
