@@ -16,10 +16,10 @@ router.get("/activities/:id", (request, response) => {
   db.doc(request.params.id).get()
       .then((ac) => response.status(200).json({
         id: ac.id,
-        sportDescription: ac.data().sportDescription == null ?
-        "" : ac.data().sportDescription,
-        sportName: ac.data().sportName == null ?
-        "" : ac.data().sportName,
+        activityDescription: ac.data().activityDescription == null ?
+        "" : ac.data().activityDescription,
+        activityName: ac.data().activityName == null ?
+        "" : ac.data().activityName,
         createDate: ac.data().createDate == null ?
          [""] : ac.data().createDate.toDate(),
         imageUrl: ac.data().imageUrl == null ?
@@ -37,10 +37,10 @@ router.get("/activities", (request, response) => {
         activities.forEach((ac) => {
           listActivities.push({
             id: ac.id,
-            sportDescription: ac.data().sportDescription == null ?
-            "" : ac.data().sportDescription,
-            sportName: ac.data().sportName == null ?
-            "" : ac.data().sportName,
+            activityDescription: ac.data().activityDescription == null ?
+            "" : ac.data().activityDescription,
+            activityName: ac.data().activityName == null ?
+            "" : ac.data().activityName,
             createDate: ac.data().createDate == null ?
              [""] : ac.data().createDate.toDate(),
             imageUrl: ac.data().imageUrl == null ?
